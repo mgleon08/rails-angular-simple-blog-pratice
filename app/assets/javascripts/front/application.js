@@ -13,4 +13,34 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require ui-router
+//= require_self
 //= require_tree .
+
+// angular.module('blog',[])
+// .controller('test',
+// ['$scope', function($scope){
+//   $scope.text = 'hello world'
+// }]);
+
+angular
+.module('blog',[
+  'ui.router',
+  'ngResource'
+  ])
+.config(
+  [      '$stateProvider', '$urlRouterProvider',
+  function($stateProvider, $urlRouterProvider) {
+  //
+  // For any unmatched url, redirect to /state1
+  $urlRouterProvider.otherwise("/posts");
+  //
+  // Now set up the states
+  $stateProvider
+    .state('posts', {
+      url: "/posts",
+      template: "<pre>{{posts | json}}</pre>",
+      controller: 'PostListCrtl'
+      // templateUrl: "partials/state1.html"
+    })
+}])

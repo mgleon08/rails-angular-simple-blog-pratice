@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html ng-app='blog'>
 <head>
   <title>AngularBlog</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular-resource.js">
+  </script>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'front/application', 'data-turbolinks-track' => true %>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<div class="container">
+<div ui-view></div>
 <%= yield %>
-
+</div>
 </body>
 </html>
