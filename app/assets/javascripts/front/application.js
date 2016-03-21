@@ -33,14 +33,23 @@ angular
   function($stateProvider, $urlRouterProvider) {
   //
   // For any unmatched url, redirect to /state1
-  $urlRouterProvider.otherwise("/posts");
+  $urlRouterProvider.otherwise("/posts/list");
   //
   // Now set up the states
   $stateProvider
     .state('posts', {
-      url: "/posts",
-      template: "<pre>{{posts | json}}</pre>",
+      abstract: true,
+      url:"/posts",
+      template: "<ui-view></ui-view>",
+    })
+    .state('posts.list', {
+      url: "/list",
+      templateUrl: "/templates?t=posts/list.html",
       controller: 'PostListCrtl'
-      // templateUrl: "partials/state1.html"
+    })
+    .state('posts.show', {
+      url: "/show/:id",
+      templateUrl: "/templates?t=posts/show.html",
+      controller: 'PostShowCrtl'
     })
 }])
