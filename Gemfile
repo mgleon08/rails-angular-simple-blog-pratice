@@ -44,6 +44,8 @@ group :development do
 end
 
 gem 'codemirror-rails'
+# markdown parser
+gem 'redcarpet'
 source 'https://rails-assets.org' do
   gem 'rails-assets-ui-router'
   gem 'rails-assets-angular-ui-codemirror'

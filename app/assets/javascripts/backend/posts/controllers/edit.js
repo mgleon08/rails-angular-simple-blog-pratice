@@ -11,4 +11,8 @@ angular
         mode: 'markdown'
     };
 
+    $scope.save = function(){
+      $scope.post.$save();
+    }
+
 }])

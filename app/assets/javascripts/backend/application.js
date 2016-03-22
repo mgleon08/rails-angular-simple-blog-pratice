@@ -34,6 +34,13 @@ angular
 .constant('Path', {
     template:'/templates?t=backend'
 })
+.config(['$httpProvider', function($httpProvider){
+  $httpProvider.defaults.headers.common['X-CSRF-TOKEN'] = $('meta[name=csrf-token]').attr('content');
+  // var headers = $httpProvider.defaults.headers.common;
+  // token_tag = document.querySelector("meta[name=csrf-token]");
+  // if( token_tag ){ headers['X-CSRF-TOKEN'] = token_tag.content; };
+  // headers['X-Requested-With'] = 'XMLHttpRequest';
+}])
 .config(
   [      '$stateProvider', '$urlRouterProvider', 'Path',
   function($stateProvider,  $urlRouterProvider,   Path) {
