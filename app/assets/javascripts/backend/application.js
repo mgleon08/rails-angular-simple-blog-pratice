@@ -68,7 +68,13 @@ angular
     .state('posts.edit', {
       url: "/edit/:id",
       templateUrl: Path.template + "/posts/edit.html",
-      controller: 'PostEditCrtl'
+      controller: 'PostEditCrtl',
+      resolve   : {
+         POST : ['POSTS', '$stateParams', function(POSTS, $stateParams){
+             var id = $stateParams.id;
+             return POSTS.get({postId:id});
+         }]
+     }
     })
     .state('posts.new', {
     url: "/new",
