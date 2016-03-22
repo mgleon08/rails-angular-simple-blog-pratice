@@ -28,7 +28,7 @@ angular
   'ngResource'
   ])
 .constant('Path', {
-    template:'/templates?t=front'
+    template:'/templates?t=backend'
 })
 .config(
   [      '$stateProvider', '$urlRouterProvider', 'Path',
@@ -53,5 +53,10 @@ angular
       url: "/show/:id",
       templateUrl: Path.template + "/posts/show.html",
       controller: 'PostShowCrtl'
+    })
+    .state('posts.edit', {
+      url: "/edit/:id",
+      templateUrl: Path.template + "/posts/edit.html",
+      controller: 'PostEditCrtl'
     })
 }])

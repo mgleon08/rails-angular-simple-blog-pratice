@@ -27,9 +27,12 @@ angular
   'ui.router',
   'ngResource'
   ])
+.constant('Path', {
+    template:'/templates?t=front'
+})
 .config(
-  [      '$stateProvider', '$urlRouterProvider',
-  function($stateProvider, $urlRouterProvider) {
+  [      '$stateProvider', '$urlRouterProvider', 'Path',
+  function($stateProvider,  $urlRouterProvider,   Path) {
   //
   // For any unmatched url, redirect to /state1
   $urlRouterProvider.otherwise("/posts/list");
@@ -43,12 +46,17 @@ angular
     })
     .state('posts.list', {
       url: "/list",
-      templateUrl: "/templates?t=posts/list.html",
+      templateUrl: Path.template + "/posts/list.html",
       controller: 'PostListCrtl'
     })
     .state('posts.show', {
       url: "/show/:id",
-      templateUrl: "/templates?t=posts/show.html",
+      templateUrl: Path.template + "/posts/show.html",
       controller: 'PostShowCrtl'
+    })
+    .state('posts.edit', {
+      url: "/edit/:id",
+      templateUrl: Path.template + "/posts/edit.html",
+      controller: 'PostEditCrtl'
     })
 }])
