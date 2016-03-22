@@ -43,6 +43,8 @@ group :development do
   gem 'spring'
 end
 
+gem 'codemirror-rails'
 source 'https://rails-assets.org' do
   gem 'rails-assets-ui-router'
+  gem 'rails-assets-angular-ui-codemirror'
 end

@@ -13,6 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require ui-router
+//= require codemirror
+//= require codemirror/modes/markdown
+//= require angular-ui-codemirror
 //= require_self
 //= require_tree .
 
@@ -25,7 +28,8 @@
 angular
 .module('blog',[
   'ui.router',
-  'ngResource'
+  'ngResource',
+  'ui.codemirror'
   ])
 .constant('Path', {
     template:'/templates?t=backend'

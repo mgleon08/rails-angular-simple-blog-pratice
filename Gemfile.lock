@@ -47,6 +47,8 @@ GEM
       sass (>= 3.3.4)
     builder (3.2.2)
     byebug (8.2.2)
+    codemirror-rails (5.11)
+      railties (>= 3.0, < 5)
     coderay (1.1.1)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
@@ -100,6 +102,10 @@ GEM
       railties (= 4.2.5.1)
       sprockets-rails
     rails-assets-angular (1.5.2)
+    rails-assets-angular-ui-codemirror (0.3.0)
+      rails-assets-angular (>= 1.3, < 2)
+      rails-assets-codemirror (>= 5.0, < 6)
+    rails-assets-codemirror (5.13.0)
     rails-assets-ui-router (0.2.18)
       rails-assets-angular (>= 1.0.8, < 2)
     rails-deprecated_sanitizer (1.0.3)
@@ -158,11 +164,13 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass (~> 3.3.6)
   byebug
+  codemirror-rails
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
   jquery-rails
   pry
   rails (= 4.2.5.1)
+  rails-assets-angular-ui-codemirror!
   rails-assets-ui-router!
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
