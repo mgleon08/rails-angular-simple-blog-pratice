@@ -14,6 +14,10 @@ class Backend::PostsController < ApplicationController
     render json: @post
   end
 
+  def create
+    render json: Post.create!(post_params)
+  end
+
   def post_params
     params.require(:post).permit(:title, :content)
   end

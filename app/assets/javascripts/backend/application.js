@@ -70,4 +70,8 @@ angular
       templateUrl: Path.template + "/posts/edit.html",
       controller: 'PostEditCrtl'
     })
+    .state('posts.new', {
+    url: "/new",
+    controller: 'PostNewCrtl'
+    })
 }])
