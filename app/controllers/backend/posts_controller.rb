@@ -18,6 +18,20 @@ class Backend::PostsController < ApplicationController
     render json: Post.create!(post_params)
   end
 
+  def destroy
+    result = 'ko'
+
+    begin
+      @post = Post.find(params[:id])
+      @post.destroy
+      result = 'ok'
+    rescue => e
+
+    end
+
+    render json: { success: result }
+  end
+
   def post_params
     params.require(:post).permit(:title, :content)
   end
