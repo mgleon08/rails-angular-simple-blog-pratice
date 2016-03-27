@@ -5,5 +5,4 @@ angular
   function($scope, POSTS){
     $scope.posts = [];
     $scope.posts = POSTS.query();
-
 }])

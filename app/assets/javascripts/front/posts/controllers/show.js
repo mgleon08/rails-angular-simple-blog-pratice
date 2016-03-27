@@ -1,7 +1,8 @@
 angular
 .module('blog')
 .controller('PostShowCrtl',
-  [       '$scope', 'POSTS',
-  function($scope, POSTS){
-    $scope.post = POSTS.get({postId:1});
+  [       '$scope', 'POSTS','$stateParams',
+  function($scope, POSTS, $stateParams){
+    var id = $stateParams.id;
+    $scope.post = POSTS.get({postId:id});
 }])

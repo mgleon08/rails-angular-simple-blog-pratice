@@ -29,7 +29,8 @@ angular
 .module('blog',[
   'ui.router',
   'ngResource',
-  'ui.codemirror'
+  'ui.codemirror',
+  'ngSanitize'
   ])
 .constant('Path', {
     template:'/templates?t=backend'

@@ -55,15 +55,4 @@ angular
       templateUrl: Path.template + "/posts/show.html",
       controller: 'PostShowCrtl'
     })
-    .state('posts.edit', {
-      url: "/edit/:id",
-      templateUrl: Path.template + "/posts/edit.html",
-      controller: 'PostEditCrtl',
-      resolve   : {
-         POST : ['POSTS', '$stateParams', function(POSTS, $stateParams){
-             var id = $stateParams.id;
-             return POSTS.get({postId:id});
-         }]
-     }
-    })
 }])
